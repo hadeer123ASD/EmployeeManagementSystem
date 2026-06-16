@@ -181,46 +181,9 @@ Swagger UI:
 https://localhost:7163/swagger
 ```
 
----
 
-## Screenshots
 
-### Dashboard
 
-Add screenshot here.
-
-### Employee List
-
-Add screenshot here.
-
-### Add Employee Form
-
-Add screenshot here.
-
-### Department Management
-
-Add screenshot here.
-
----
-
-## Included Files
-
-* Source code
-* Entity Framework migrations
-* Database script or migration files
-* Screenshots
-* README.md
-
----
-
-## Future Improvements
-
-* Authentication and authorization
-* Repository and Service pattern
-* Export data to Excel/PDF
-* Advanced filtering
-* Dashboard statistics
-* Role-based access control
 
 ---
 
