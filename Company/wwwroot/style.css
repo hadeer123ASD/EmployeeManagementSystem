@@ -1,0 +1,77 @@
+﻿body {
+    background: linear-gradient(135deg, #eef2ff, #f8fbff);
+}
+
+.top-bar {
+    background: #111827;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.pagination-bar {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+/* MODERN GLASS MODAL */
+.glass-modal {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(14px);
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.btn {
+    border-radius: 10px;
+    margin-bottom:10px;
+}
+
+/* RESPONSIVE TABLE */
+@media (max-width: 768px) {
+
+    table thead {
+        display: none;
+    }
+
+    table, tbody, tr, td {
+        display: block;
+        width: 100%;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        background: white;
+        padding: 12px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+        td::before {
+            content: attr(data-label);
+            font-weight: 600;
+            color: #111;
+        }
+}
