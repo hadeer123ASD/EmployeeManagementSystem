@@ -1,0 +1,70 @@
+CREATE DATABASE CompanyDB;
+GO
+
+USE CompanyDB;
+GO
+
+CREATE TABLE Departments (
+    DepartmentID INT IDENTITY(1,1) PRIMARY KEY,
+    DepartmentName VARCHAR(100) NOT NULL
+);
+
+
+INSERT INTO Departments (DepartmentName)
+VALUES
+('Human Resources'),
+('Information Technology'),
+('Finance'),
+('Marketing'),
+('Sales'),
+('Operations'),
+('Customer Support'),
+('Research and Development');
+
+
+CREATE TABLE Employees (
+    EmployeeID INT IDENTITY(1001,1) PRIMARY KEY,
+    FullName VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) UNIQUE NOT NULL,
+    MobileNumber VARCHAR(20),
+    DepartmentID INT NOT NULL,
+    JobTitle VARCHAR(100),
+    HireDate DATE,
+    IsActive BIT NOT NULL DEFAULT 1,
+
+    CONSTRAINT FK_Employee_Department
+        FOREIGN KEY (DepartmentID)
+        REFERENCES Departments(DepartmentID)
+);
+
+
+INSERT INTO Employees
+(FullName, Email, MobileNumber, DepartmentID, JobTitle, HireDate, IsActive)
+VALUES
+('Ahmed Hassan','ahmed.hassan@company.com','01010000001',2,'Software Engineer','2021-01-15',1),
+('Sara Ali','sara.ali@company.com','01010000002',1,'HR Specialist','2020-06-20',1),
+('Mohamed Adel','mohamed.adel@company.com','01010000003',3,'Accountant','2019-03-10',1),
+('Nour Ibrahim','nour.ibrahim@company.com','01010000004',4,'Marketing Specialist','2022-02-18',1),
+('Youssef Mahmoud','youssef.mahmoud@company.com','01010000005',5,'Sales Representative','2021-11-01',1),
+('Mariam Samir','mariam.samir@company.com','01010000006',2,'Database Administrator','2018-09-12',1),
+('Omar Khaled','omar.khaled@company.com','01010000007',6,'Operations Analyst','2020-04-25',1),
+('Laila Ahmed','laila.ahmed@company.com','01010000008',7,'Customer Support Agent','2022-07-13',1),
+('Karim Mostafa','karim.mostafa@company.com','01010000009',2,'Network Engineer','2019-08-30',1),
+('Hana Tarek','hana.tarek@company.com','01010000010',8,'Research Engineer','2021-05-14',1),
+
+('Ali Fathy','ali.fathy@company.com','01010000011',2,'Backend Developer','2020-12-01',1),
+('Salma Nabil','salma.nabil@company.com','01010000012',1,'Recruiter','2019-10-15',1),
+('Mahmoud Saeed','mahmoud.saeed@company.com','01010000013',3,'Financial Analyst','2022-01-20',1),
+('Aya Gamal','aya.gamal@company.com','01010000014',4,'SEO Specialist','2021-03-05',1),
+('Khaled Hamdy','khaled.hamdy@company.com','01010000015',5,'Sales Manager','2018-06-17',1),
+('Reem Ashraf','reem.ashraf@company.com','01010000016',6,'Operations Manager','2019-12-11',1),
+('Mustafa Yasser','mustafa.yasser@company.com','01010000017',2,'Frontend Developer','2021-08-09',1),
+('Dina Wael','dina.wael@company.com','01010000018',7,'Customer Support Specialist','2020-07-23',1),
+('Tamer Hany','tamer.hany@company.com','01010000019',2,'DevOps Engineer','2019-05-19',1),
+('Rana Magdy','rana.magdy@company.com','01010000020',8,'Data Scientist','2022-04-08',1),
+
+('Amr Ehab','amr.ehab@company.com','01010000021',2,'QA Engineer','2021-10-10',1),
+('Mai Sherif','mai.sherif@company.com','01010000022',1,'HR Manager','2018-11-07',1),
+('Hossam Adel','hossam.adel@company.com','01010000023',3,'Senior Accountant','2017-09-09',1),
+('Farah Mohamed','farah.mohamed@company.com','01010000024',4,'Content Creator','2022-06-21',1),
+('Ahmed Tarek','ahmed.tarek@company.com','01010000025',5,'Sales Executive','2021-02-12',1);
